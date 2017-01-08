@@ -1,6 +1,9 @@
 .select2-results{
   z-index: 1000000000000000000;
 }
+.x_title h2{
+  color: rgb(51,102,255);font-size:strong!important;
+}
 .form-group{
   font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif!important;
   font-size: 13px!important;
@@ -349,6 +352,7 @@ body .container.body .right_col {
   max-height: 400px !important; }
 
 /**  ------------------------------------------  **/
+
 .blue {
   color: #3498DB; }
 
