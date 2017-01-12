@@ -75,6 +75,12 @@
                       <li><a href="incidents-list.html">Mostrar</a></li>
                     </ul>
                   </li>
+                  <li><a><i class="fa fa-edit"></i> Tickets <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="tickets-assigned-list.html">Asignados</a></li>
+                      <li><a href="tickets-attended-list.html">Atendidos</a></li>
+                    </ul>
+                  </li>
                 </ul>
               </div>
 
@@ -323,24 +329,6 @@ margin-right: 0px!important;" class="btn btn-success" type="button" data-toggle=
                           </div>
                         </div>
                         <div class="form-group">
-                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Emergencia</label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <select class="selectEmergency_single form-control" tabindex="-1" style="width:100%">
-                              <option></option>
-                              <option value="AK">Tipo 1</option>
-                              <option value="HI">Tipo 2</option>
-                              <option value="CA">Tipo 3</option>
-                              <option value="NV">Tipo 4</option>
-                              <option value="OR">Tipo 5</option>
-                              <option value="WA">Tipo 6</option>
-                              <option value="AZ">Tipo 7</option>
-                              <option value="CO">Tipo 8</option>
-                              <option value="ID">Tipo 9</option>
-                              <option value="MT">Tipo 10</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="form-group">
                           <label class="control-label col-md-3 col-sm-3 col-xs-12">Desc. Incidencia del cliente <span class="required">*</span>
                             <br>
                             <small class="text-navy">Necesidad del cliente</small>
@@ -424,7 +412,7 @@ margin-right: 0px!important;" class="btn btn-success" type="button" data-toggle=
             <th style="color: #3d566e;"># Incidencia</th>
                           <th style="color: #3d566e;">Técnico asignado</th>
                           <th style="color: #3d566e;">Fecha de atención</th>
-                          <th style="color: #3d566e;">Estado</th>
+                          <th style="color: #3d566e;">Acción</th>
                           <th></th>
         </tr>
       </thead>
