@@ -223,18 +223,19 @@
                                         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                                             <div class="panel-body">
                                                 <div class="col-xs-12 col-sm-6 col-md-6">
-                                                  <div class="form-group row" width="100%">
+                                                  <div class="form-group row" style="width: 100%;">
                           
+                          
+                          <div class="col-xs-12"><div id="map"></div></div>
                           <label class="control-label col-xs-12">Dirección</label>
                           <label class="desc-label col-xs-12">
                             Dirección 3
                           </label>
-                          <div class="col-xs-12"><div id="map" width="100%" height="250px"></div></div>
                         </div>
                                                 </div>
 
                                                 <div class="col-xs-12 col-sm-6 col-md-6">
-                                                  <div class="form-group row" width="100%">
+                                                  <div class="form-group row" style="width: 100%;">
                          
                         
                           <label class="control-label col-xs-12">Cliente</label>
@@ -324,6 +325,8 @@
          <!-- /footer content -->
       </div>
       </div>
+
+    </script>
       <!-- jQuery -->
       <script src="../vendors/jquery/dist/jquery.min.js"></script>
       <!-- Bootstrap -->
@@ -351,7 +354,12 @@
       <script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
       <script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
 
-    <script>
+  
+
+      <!-- Custom Theme Scripts -->
+      <script src="../build/js/custom.js"></script>
+      <!--gmaps-->
+      <script>
       function initMap() {
         var uluru = {lat: -25.363, lng: 131.044};
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -365,25 +373,12 @@
       }
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCc2tphvMuXxqQVhQHT1HcYvqLMWJdtV3Q&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTSve4xnOli9bVJiDzNeDbbFm1TDVWSJU&callback=initMap">
     </script>
-
-      <!-- Custom Theme Scripts -->
-      <script src="../build/js/custom.js"></script>
       <!-- Datatables -->
-    
       <script>
          $(document).ready(function() {
 
-          var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
 
            var handleDataTableButtons = function() {
              if ($("#datatable-buttons").length) {
