@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Incidencias</title>
+
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-wysiwyg -->
+    <link href="../vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="../vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="../vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+    <!-- starrr -->
+    <link href="../vendors/starrr/dist/starrr.css" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.css" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Enterprise</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Bienvenido,</span>
+                <h2>Wuape</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>Inicio</h3>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="index.html">Dashboard</a></li>
+                      <li><a href="index2.html">Dashboard2</a></li>
+                      <li><a href="index3.html">Dashboard3</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-edit"></i> Incidencias <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="incidents-create.html">Registrar</a></li>
+                      <li><a href="incidents-list.html">Mostrar</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-edit"></i> Tickets - Administrador<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="tickets-list.html">Mostrar</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-edit"></i> Tickets - Tecnico<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="tickets-assigned-list.html">Asignados</a></li>
+                      <li><a href="tickets-attended-list.html">Atendidos</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="images/img.jpg" alt="">Wuape
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <li><a href="javascript:;"> Perfil</a></li>
+                    <li>
+                      <a href="javascript:;">
+                        <span class="badge bg-red pull-right">50%</span>
+                        <span>Configuración</span>
+                      </a>
+                    </li>
+                    <li><a href="javascript:;">Ayuda</a></li>
+                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Salir</a></li>
+                  </ul>
+                </li>
+
+                <li role="presentation" class="dropdown">
+                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-envelope-o"></i>
+                    <span class="badge bg-green">6</span>
+                  </a>
+                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="text-center">
+                        <a>
+                          <strong>See All Alerts</strong>
+                          <i class="fa fa-angle-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Información del ticket</h3>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-xs-12">
+                <form data-parsley-validate class="form-horizontal input_mask">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Incidencia <small>Detalle</small></h2>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                        <div class="form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Id incidente</label>
+                          <label class="desc-label col-md-6 col-sm-6 col-xs-12">
+                            1
+                          </label>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Cliente</label>
+                          <label class="desc-label col-md-6 col-sm-6 col-xs-12">
+                            Cliente 1
+                          </label>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Tienda</label>
+                          <label class="desc-label col-md-6 col-sm-6 col-xs-12">
+                            Tienda 2
+                          </label>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Dirección</label>
+                          <label class="desc-label col-md-6 col-sm-6 col-xs-12">
+                            Dirección 3
+                          </label>
+                        </div>
+
+                        
+                        <div class="form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Emergencia</label>
+                          <label class="desc-label col-md-6 col-sm-6 col-xs-12">
+                            Tipo 2
+                          </label>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Desc. Incidencia del cliente <span class="required">*</span>
+                            <br>
+                            <small class="text-navy">Necesidad del cliente</small>
+                          </label>
+                          <label class="desc-label col-md-6 col-sm-6 col-xs-12">
+                            El cliente indica que la cámara curva está haciendo demasiado ruído.
+                          </label>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Desc. Solución Incidencia <span class="required">*</span>
+                            <br>
+                            <small class="text-navy">Solución proporcionada</small>
+                          </label>
+                          <label class="desc-label col-md-6 col-sm-6 col-xs-12">
+                            Se le indicó al cliente que se enviaría al técnico a verificar el funcionamiento de la cámara.
+                          </label>
+                        </div>
+                      </div>
+                  <div class="x_title">
+                    <h2>Ticket <small>Detalle</small></h2>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                  <div class="form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Fecha de atención</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input id="new_date" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
+                          </div>
+                        </div>
+                    <div class="form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Estado</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <select class="selectEmergency_single form-control" tabindex="-1" style="width:100%">
+                              <option></option>
+                              <option value="AK">Creado</option>
+                              <option value="HI">Atendido</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Técnico</label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <select id="new_tec" class="selectTec_single form-control" tabindex="-1" style="width:100%">
+                                <option></option>
+                                <option value="AK">Técnico 1</option>
+                                <option value="HI">Técnico 2</option>
+                                <option value="CA">Técnico 3</option>
+                                <option value="NV">Técnico 4</option>
+                                <option value="OR">Técnico 5</option>
+                                <option value="WA">Técnico 6</option>
+                                <option value="AZ">Técnico 7</option>
+                                <option value="CO">Técnico 8</option>
+                                <option value="ID">Técnico 9</option>
+                                <option value="MT">Técnico 10</option>
+                              </select>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Solución de ticket <span class="required">*</span>
+                            <br>
+                            <small class="text-navy">Descripción de solución final</small>
+                          </label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <textarea class="form-control" rows="3" value="Se le indicó al cliente que se enviaría al técnico a verificar el funcionamiento de la cámara."></textarea>
+                          </div>
+                        </div>
+
+
+<!--table id="data_table" class="table table-hover">
+                          <thead>
+        <tr>
+            <th style="color: #3d566e;"># Foto</th>
+                          <th style="color: #3d566e;">Imagen</th>
+                          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+
+<tr>
+  <td> -</td>
+<td>
+ 
+
+<button type="button" class="left btn btn-success btn-xs" data-toggle="modal" data-target="#modalAddPhoto"><span class="fa fa-camera" alt="Tomar foto"></span></button>
+<input type="file" name="pic" accept="image/*">
+
+
+</td>
+<td><a id="snap" style="color: #3fc997;font-size: 14px;" onclick="add_row()"><span class="fa fa-plus"></span> Agregar</a></td>
+</tr>
+</tbody>
+</table-->
+<div class="row">
+              <div class="col-md-12">
+                <div class="x_panel">
+               
+                  <div class="x_content">
+
+                    <div id="gallery-ticket" class="row">
+
+                      <p>Evidencias del incidente</p>
+
+                     
+                      <div class="col-md-3">
+                        <div class="thumbnail">
+                          <div class="image view view-first" style="padding:30px;">
+                            <div style="margin:auto;width: 100px;height: 100px;" >
+                            <a id="show-camera" href="#" data-toggle="modal" data-target="#modalAddPhoto" ><i class="fa fa-camera" style="font-size:6em;"></i></a>
+                            </div>
+                          </div>
+                          <div class="caption">
+                            <input type="file" name="file-1" id="file-1" class="inputfile inputfile-1"/>
+                            <label for="file-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>Subir imagen&hellip;</span></label>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+                    <div class="ln_solid"></div>
+                        <div class="form-group">
+                          <div class="col-md-7 col-sm-12 col-xs-12 col-md-offset-5">                            
+                            <button type="submit" class="btn btn-success">Guardar</button>
+                            <button type="submit" class="btn btn-primary">Cancelar</button>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Powered by <a href="https://colorlib.com">Wuape</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalAddPhoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Tomar foto</h4>
+      </div>
+      <div class="modal-body">
+          <video id="video" width="100%" height="300" autoplay></video>
+          <canvas id="canvas" width="400" height="300" style="display: none;"></canvas>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button id="snap" type="button" class="btn btn-primary" data-dismiss="modal">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- jQuery -->
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="../vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="../vendors/nprogress/nprogress.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="../vendors/iCheck/icheck.min.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="../vendors/moment/min/moment.min.js"></script>
+    <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- bootstrap-wysiwyg -->
+    <script src="../vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+    <script src="../vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+    <script src="../vendors/google-code-prettify/src/prettify.js"></script>
+    <!-- jQuery Tags Input -->
+    <script src="../vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+    <!-- Switchery -->
+    <script src="../vendors/switchery/dist/switchery.min.js"></script>
+    <!-- Select2 -->
+    <script src="../vendors/select2/dist/js/select2.full.min.js"></script>
+    <!-- Parsley -->
+    <script src="../vendors/parsleyjs/dist/parsley.min.js"></script>
+    <!-- Autosize -->
+    <script src="../vendors/autosize/dist/autosize.min.js"></script>
+    <!-- jQuery autocomplete -->
+    <script src="../vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+    <!-- starrr -->
+    <script src="../vendors/starrr/dist/starrr.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="../build/js/custom.js"></script>
+
+    <!-- bootstrap-daterangepicker -->
+    <script>
+
+
+
+function delete_row(no)
+{
+ document.getElementById("row"+no+"").outerHTML="";
+}
+
+function add_row()
+{
+ var new_tec=getSelectedText("new_tec");
+ var new_date=document.getElementById("new_date").value;
+  
+ var table=document.getElementById("data_table").tBodies[0];;
+ var table_len=(table.rows.length)-1;
+ var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td>-</td><td id='tec_row"+table_len+"'>"+new_tec+"</td><td id='date_row"+table_len+"'>"+new_date+"</td><td><a style='color: #3fc997;font-size: 14px;' onclick='delete_row("+table_len+")'><span class='fa fa-trash'></span> Eliminar </a></td></tr>";
+
+ document.getElementById("new_date").value="";
+}
+
+function getSelectedText(elementId) {
+    var elt = document.getElementById(elementId);
+
+    if (elt.selectedIndex == -1)
+        return null;
+
+    return elt.options[elt.selectedIndex].text;
+}
+
+      $(document).ready(function() {
+
+        $('#new_date').daterangepicker({
+          singleDatePicker: true,
+          calender_style: "picker_4"
+        }, function(start, end, label) {
+          console.log(start.toISOString(), end.toISOString(), label);
+        });
+
+        
+
+        /*function edit_row(no)
+        {
+         document.getElementById("edit_button"+no).style.display="none";
+         document.getElementById("save_button"+no).style.display="block";
+          
+         var tec=document.getElementById("tec_row"+no);
+         var date=document.getElementById("date_row"+no);
+         var status=document.getElementById("status_row"+no);
+          
+         var tec_data=name.innerHTML;
+         var date_data=country.innerHTML;
+         var status_data=age.innerHTML;
+          
+         tec.innerHTML="<input type='text' id='tec_text"+no+"' value='"+tec_data+"'>";
+         date.innerHTML="<input type='text' id='date_text"+no+"' value='"+date_data+"'>";
+         status.innerHTML="<input type='text' id='status_text"+no+"' value='"+status_data+"'>";
+        }
+
+        function save_row(no)
+        {
+         var tec_val=document.getElementById("tec_text"+no).value;
+         var date_val=document.getElementById("date_text"+no).value;
+         var status_val=document.getElementById("status_text"+no).value;
+
+         document.getElementById("tec_row"+no).innerHTML=tec_val;
+         document.getElementById("date_row"+no).innerHTML=date_val;
+         document.getElementById("status_row"+no).innerHTML=status_val;
+
+         document.getElementById("edit_button"+no).style.display="block";
+         document.getElementById("save_button"+no).style.display="none";
+        }
+
+        function delete_row(no)
+        {
+         document.getElementById("row"+no+"").outerHTML="";
+        }
+
+        function add_row()
+        {
+         var new_tec=document.getElementById("new_tec").value;
+         var new_date=document.getElementById("new_date").value;
+         var new_status=document.getElementById("new_status").value;
+          
+         var table=document.getElementById("data_table");
+         var table_len=(table.rows.length);
+         var row = table.insertRow(table_len).outerHTML=
+         "<tr id='row"+table_len+"'>
+         <td>"+table_len+"</td>
+         <td id='tec_row"+table_len+"'>"+new_tec+"</td>
+         <td id='date_row"+table_len+"'>"+new_date+"</td>
+         <td id='status_row"+table_len+"'>"+new_status+"</td>
+         <td><input type='button' id='edit_button"+table_len+"' value='Edit' class='edit' onclick='edit_row("+table_len+")'>
+         <input type='button' id='save_button"+table_len+"' value='Save' class='save' onclick='save_row("+table_len+")'> 
+         <input type='button' value='Delete' class='delete' onclick='delete_row("+table_len+")'>
+         </td>
+         </tr>";
+
+         document.getElementById("new_tec").value="";
+         document.getElementById("new_date").value="";
+         document.getElementById("new_status").value="";
+        }*/
+        
+      });
+    </script>
+    <!-- /bootstrap-daterangepicker -->
+
+    <!-- bootstrap-wysiwyg -->
+    <script>
+      $(document).ready(function() {
+        function initToolbarBootstrapBindings() {
+          var fonts = ['Serif', 'Sans', 'Arial', 'Arial Black', 'Courier',
+              'Courier New', 'Comic Sans MS', 'Helvetica', 'Impact', 'Lucida Grande', 'Lucida Sans', 'Tahoma', 'Times',
+              'Times New Roman', 'Verdana'
+            ],
+            fontTarget = $('[title=Font]').siblings('.dropdown-menu');
+          $.each(fonts, function(idx, fontName) {
+            fontTarget.append($('<li><a data-edit="fontName ' + fontName + '" style="font-family:\'' + fontName + '\'">' + fontName + '</a></li>'));
+          });
+          $('a[title]').tooltip({
+            container: 'body'
+          });
+          $('.dropdown-menu input').click(function() {
+              return false;
+            })
+            .change(function() {
+              $(this).parent('.dropdown-menu').siblings('.dropdown-toggle').dropdown('toggle');
+            })
+            .keydown('esc', function() {
+              this.value = '';
+              $(this).change();
+            });
+
+          $('[data-role=magic-overlay]').each(function() {
+            var overlay = $(this),
+              target = $(overlay.data('target'));
+            overlay.css('opacity', 0).css('position', 'absolute').offset(target.offset()).width(target.outerWidth()).height(target.outerHeight());
+          });
+
+          if ("onwebkitspeechchange" in document.createElement("input")) {
+            var editorOffset = $('#editor').offset();
+
+            $('.voiceBtn').css('position', 'absolute').offset({
+              top: editorOffset.top,
+              left: editorOffset.left + $('#editor').innerWidth() - 35
+            });
+          } else {
+            $('.voiceBtn').hide();
+          }
+        }
+
+        function showErrorAlert(reason, detail) {
+          var msg = '';
+          if (reason === 'unsupported-file-type') {
+            msg = "Unsupported format " + detail;
+          } else {
+            console.log("error uploading file", reason, detail);
+          }
+          $('<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>' +
+            '<strong>File upload error</strong> ' + msg + ' </div>').prependTo('#alerts');
+        }
+
+        initToolbarBootstrapBindings();
+
+        $('#editor').wysiwyg({
+          fileUploadError: showErrorAlert
+        });
+
+        window.prettyPrint;
+        prettyPrint();
+      });
+    </script>
+    <!-- /bootstrap-wysiwyg -->
+
+    <!-- Select2 -->
+    <script>
+      $(document).ready(function() {
+        $(".selectTec_single").select2({
+          placeholder: "Seleccionar técnico",
+          allowClear: true
+        });
+        $(".selectSpeciality_single").select2({
+          placeholder: "Seleccionar Especialidad",
+          allowClear: true
+        });
+        $(".select2_single").select2({
+          placeholder: "Seleccionar tienda",
+          allowClear: true
+        });
+        $(".selectCustomer_single").select2({
+          placeholder: "Seleccionar cliente",
+          allowClear: true
+        });
+        
+        $(".selectAddress_single").select2({
+          placeholder: "Seleccionar dirección",
+          allowClear: true
+        });
+        $(".selectEmergency_single").select2({
+          placeholder: "Seleccionar tipo de Emergencia",
+          allowClear: true
+        });
+        $(".select2_group").select2({});
+        $(".select2_multiple").select2({
+          maximumSelectionLength: 4,
+          placeholder: "With Max Selection limit 4",
+          allowClear: true
+        });
+      });
+    </script>
+    <!-- /Select2 -->
+
+    <!-- jQuery Tags Input -->
+    <script>
+      function onAddTag(tag) {
+        alert("Added a tag: " + tag);
+      }
+
+      function onRemoveTag(tag) {
+        alert("Removed a tag: " + tag);
+      }
+
+      function onChangeTag(input, tag) {
+        alert("Changed a tag: " + tag);
+      }
+
+      $(document).ready(function() {
+        $('#tags_1').tagsInput({
+          width: 'auto'
+        });
+      });
+    </script>
+    <!-- /jQuery Tags Input -->
+
+    <!-- Parsley -->
+    <script>
+      $(document).ready(function() {
+        $.listen('parsley:field:validate', function() {
+          validateFront();
+        });
+        $('#demo-form .btn').on('click', function() {
+          $('#demo-form').parsley().validate();
+          validateFront();
+        });
+        var validateFront = function() {
+          if (true === $('#demo-form').parsley().isValid()) {
+            $('.bs-callout-info').removeClass('hidden');
+            $('.bs-callout-warning').addClass('hidden');
+          } else {
+            $('.bs-callout-info').addClass('hidden');
+            $('.bs-callout-warning').removeClass('hidden');
+          }
+        };
+      });
+
+      $(document).ready(function() {
+        $.listen('parsley:field:validate', function() {
+          validateFront();
+        });
+        $('#demo-form2 .btn').on('click', function() {
+          $('#demo-form2').parsley().validate();
+          validateFront();
+        });
+        var validateFront = function() {
+          if (true === $('#demo-form2').parsley().isValid()) {
+            $('.bs-callout-info').removeClass('hidden');
+            $('.bs-callout-warning').addClass('hidden');
+          } else {
+            $('.bs-callout-info').addClass('hidden');
+            $('.bs-callout-warning').removeClass('hidden');
+          }
+        };
+      });
+      try {
+        hljs.initHighlightingOnLoad();
+      } catch (err) {}
+    </script>
+    <!-- /Parsley -->
+
+    <!-- Autosize -->
+    <script>
+      $(document).ready(function() {
+        autosize($('.resizable_textarea'));
+      });
+    </script>
+    <!-- /Autosize -->
+
+    <!-- Starrr -->
+    <script>
+      $(document).ready(function() {
+        $(".stars").starrr();
+
+        $('.stars-existing').starrr({
+          rating: 4
+        });
+
+        $('.stars').on('starrr:change', function (e, value) {
+          $('.stars-count').html(value);
+        });
+
+        $('.stars-existing').on('starrr:change', function (e, value) {
+          $('.stars-count-existing').html(value);
+        });
+      });
+    </script>
+    <!-- /Starrr -->
+  </body>
+</html>
