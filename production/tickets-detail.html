@@ -213,7 +213,7 @@
             <div class="">
               <div class="page-title">
                 <div class="title_left">
-                  <h3>Actualizar ticket</h3>
+                  <h3>Información del ticket</h3>
                 </div>
               </div>
               <div class="clearfix"></div>
@@ -285,46 +285,30 @@
                       <div class="x_content">
                         <div class="form-group">
                           <label class="control-label col-md-3 col-sm-3 col-xs-12">Fecha de atención</label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input class="date-picker form-control" required="required" type="text">
-                          </div>
+                          <label class="desc-label col-md-6 col-sm-6 col-xs-12">
+                            12/02/2017
+                          </label>
                         </div>
                         <div class="form-group">
                           <label class="control-label col-md-3 col-sm-3 col-xs-12">Estado</label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <select class="selectEmergency_single form-control" tabindex="-1" style="width:100%">
-                              <option></option>
-                              <option value="AK">Creado</option>
-                              <option value="HI">Atendido</option>
-                            </select>
-                          </div>
+                          <label class="desc-label col-md-6 col-sm-6 col-xs-12">
+                            Creado
+                          </label>
                         </div>
                         <div class="form-group">
                           <label class="control-label col-md-3 col-sm-3 col-xs-12">Técnico</label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <select id="new_tec" class="selectTec_single form-control" tabindex="-1" style="width:100%">
-                                <option></option>
-                                <option value="AK">Técnico 1</option>
-                                <option value="HI">Técnico 2</option>
-                                <option value="CA">Técnico 3</option>
-                                <option value="NV">Técnico 4</option>
-                                <option value="OR">Técnico 5</option>
-                                <option value="WA">Técnico 6</option>
-                                <option value="AZ">Técnico 7</option>
-                                <option value="CO">Técnico 8</option>
-                                <option value="ID">Técnico 9</option>
-                                <option value="MT">Técnico 10</option>
-                              </select>
-                          </div>
+                          <label class="desc-label col-md-6 col-sm-6 col-xs-12">
+                            Técnico #2
+                          </label>
                         </div>
                         <div class="form-group">
                           <label class="control-label col-md-3 col-sm-3 col-xs-12">Solución de ticket <span class="required">*</span>
                             <br>
                             <small class="text-navy">Descripción de solución final</small>
                           </label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <textarea class="form-control" rows="3" value="Se le indicó al cliente que se enviaría al técnico a verificar el funcionamiento de la cámara."></textarea>
-                          </div>
+                          <label class="desc-label col-md-6 col-sm-6 col-xs-12">
+                            Se soluciona el caso
+                          </label>
                         </div>
                         <div class="row">
                           <div class="col-md-12">
@@ -334,18 +318,29 @@
                                   <p>Evidencias del incidente</p>
                                   <div class="col-md-3">
                                     <div class="thumbnail">
-                                      <div class="image view view-first" style="padding:30px;">
-                                        <div style="margin:auto;width: 100px;height: 100px;" >
-                                        <a id="show-camera" href="#" data-toggle="modal" data-target="#modalAddPhoto" ><i class="fa fa-camera" style="font-size:6em;"></i></a>
-                                        </div>
-                                      </div>
-                                      <div class="caption">
-                                        <input type="file" name="file-1" id="file-1" class="inputfile inputfile-1"/>
-                                        <label for="file-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>Subir imagen&hellip;</span></label>
-                                      </div>
+                                      <img class="img-cover" name="evidencias[]" src="#" alt="your image" />
                                     </div>
                                   </div>
-                                  
+                                  <div class="col-md-3">
+                                    <div class="thumbnail">
+                                      <img class="img-cover" name="evidencias[]" src="#" alt="your image" />
+                                    </div>
+                                  </div>
+                                  <div class="col-md-3">
+                                    <div class="thumbnail">
+                                      <img class="img-cover" name="evidencias[]" src="#" alt="your image" />
+                                    </div>
+                                  </div>
+                                  <div class="col-md-3">
+                                    <div class="thumbnail">
+                                      <img class="img-cover" name="evidencias[]" src="#" alt="your image" />
+                                    </div>
+                                  </div>
+                                  <div class="col-md-3">
+                                    <div class="thumbnail">
+                                      <img class="img-cover" name="evidencias[]" src="#" alt="your image" />
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
