@@ -21,7 +21,11 @@
     <link href="../vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
     <link href="../vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
     <link href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="../vendors/select2/dist/css/select2.min.css" rel="stylesheet">
 
+      <!-- bootstrap-wysiwyg -->
+      <link href="../vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.css" rel="stylesheet">
   </head>
@@ -181,35 +185,46 @@
                                                 </a>
                           <a href="#" class="btn btn-success"><span class="fa fa-plus"></span></a>
  
-                          <div id="collapse-search" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                            <div class="input-group">
-                              <div class="input-group-btn search-panel-cols">
-                                 <select class="selectCustomer_single form-control" tabindex="-1" style="width:20%">
-                                <option></option>
-                                <option value="AK">Campos</option>
-                                <option value="HI">Id incidente</option>
-                                <option value="CA">Id ticket</option>
-                                <option value="NV">Cliente</option>
-                                <option value="OR">Estado</option>
-                                <option value="WA">Fecha</option>
-                              </select>
-                              </div>
-
-                              <select class="selectCustomer_single form-control" tabindex="-1" style="width:20%">
-                                <option></option>
-                                <option value="AK">contiene</option>
-                                <option value="HI">igual</option>
-                                <option value="CA">mayor que ></option>
-                                <option value="NV">menor que < </option>
-                              </select>   
-                              <input type="text" class="form-control" name="x" placeholder="Buscar term...">
-                              <span class="input-group-btn">
-                                  <button class="btn btn-default" type="button"><span class="fa fa-close"></span></button>
-                              </span>
-                          </div>
-                          <a href="">Agregar filtros</a>
-                          <div class="divider"></div>
-                          <button><span class="fa fa-search"></span> Buscar</button>
+                          <div id="collapse-search" class="panel-collapse collapse row" role="tabpanel" aria-labelledby="headingTwo" style="width: 100%;">
+                          <br>
+                            <table id="data_table" class="table table-bordered">
+                              <thead>
+                                <tr>
+                                  <th style="color: #3d566e;">Campo</th>
+                                  <th style="color: #3d566e;">Condición</th>
+                                  <th style="color: #3d566e;">Valor</th>
+                                  <th style="color: #3d566e;">Acción</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <select id="new_column" class="selectColumn form-control" tabindex="-1" style="width:100%">
+                                    <option></option>
+                                      <option value="HI">Id incidente</option>
+                                      <option value="CA">Id ticket</option>
+                                      <option value="NV">Cliente</option>
+                                      <option value="OR">Estado</option>
+                                      <option value="WA">Fecha</option>
+                                    </select>
+                                  </td>
+                                  <td>
+                                    <select id="new_filter" class="selectFilter form-control" tabindex="-1" style="width:100%">
+                                    <option></option>
+                                      <option value="AK">igual</option>
+                                      <option value="HI">mayor que ></option>
+                                      <option value="CA">menor que < </option>
+                                      <option value="NV">contiene</option>
+                                    </select>
+                                  </td>
+                                  <td>
+                                    <input id="new_value" type="text" class="form-control" placeholder="Valor">
+                                  </td>
+                                  <td><a style="color: #3fc997;font-size: 14px;" onclick="add_row_search()"><span class="fa fa-plus"></span> Agregar filtro</a></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <button type="submit" class="btn btn-success"><span class="fa fa-search"></span> Buscar</button>
                         </div>
                       </div> 
 
@@ -443,6 +458,12 @@
     <script src="../vendors/jszip/dist/jszip.min.js"></script>
     <script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
     <script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
+    <!-- Select2 -->
+    <script src="../vendors/select2/dist/js/select2.full.min.js"></script>
+
+      <script src="../vendors/google-code-prettify/src/prettify.js"></script>
+      <!-- jQuery autocomplete -->
+      <script src="../vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
 
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.js"></script>
@@ -511,7 +532,48 @@
           $('.search-panel span#search-cols').text(concept);
           $('.input-group #search_param-cols').val(param);
         });
+
+        $(".selectColumn").select2({
+          placeholder: "Seleccionar columna",
+          allowClear: true
+        });
+
+        $(".selectFilter").select2({
+          placeholder: "Seleccionar filtro",
+          allowClear: true
+        });
       });
+
+
+    </script>
+    <script type="text/javascript">
+      
+function delete_row_search(no)
+{
+ document.getElementById("row"+no+"").outerHTML="";
+}
+
+function add_row_search()
+{
+ var new_column=getSelectedText("new_column");
+ var new_filter=getSelectedText("new_filter");
+ var new_value=document.getElementById("new_value").value;
+  
+ var table=document.getElementById("data_table").tBodies[0];;
+ var table_len=(table.rows.length)-1;
+ var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='new_column"+table_len+"'>"+new_column+"</td><td id='new_filter"+table_len+"'>"+new_filter+"</td><td id='new_value"+table_len+"'>"+new_value+"</td><td><a style='color: #3fc997;font-size: 14px;' onclick='delete_row_search("+table_len+")'><span class='fa fa-trash'></span> Eliminar </a></td></tr>";
+
+ document.getElementById("new_value").value="";
+}
+
+function getSelectedText(elementId) {
+    var elt = document.getElementById(elementId);
+
+    if (elt.selectedIndex == -1)
+        return null;
+
+    return elt.options[elt.selectedIndex].text;
+}
     </script>
 
 
