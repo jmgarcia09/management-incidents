@@ -1706,7 +1706,7 @@ Switchery.prototype.setPosition = function (clicked) {
     this.element.checked = false;
     this.switcher.style.boxShadow = 'inset 0 0 0 0 ' + this.options.secondaryColor;
     this.switcher.style.borderColor = this.options.secondaryColor;
-    this.switcher.style.backgroundColor = (this.options.secondaryColor !== defaults.secondaryColor) ? this.options.secondaryColor : '#fff';
+    this.switcher.style.backgroundColor = (this.options.secondaryColor !== defaults.secondaryColor) ? this.options.secondaryColor : '#26b99a';
     this.jack.style.backgroundColor = (this.options.jackSecondaryColor !== this.options.jackColor) ? this.options.jackSecondaryColor : this.options.jackColor;
     this.setSpeed();
   }
