@@ -38,7 +38,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Enterprise</span></a>
+              <a href="index.html" class="site_title"><i class="fa fa-terminal"></i> <span>TechGest</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -60,7 +60,7 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <h3>Inicio</h3>
+                
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
@@ -227,25 +227,25 @@
                   <div class="x_content">
                         <div class="form-group">
                           <label class="control-label col-md-3 col-sm-3 col-xs-12">Id incidente</label>
-                          <label class="desc-label col-md-6 col-sm-6 col-xs-12">
+                          <label class="desc-label col-md-6 col-sm-9 col-xs-12">
                             1
                           </label>
                         </div>
                         <div class="form-group">
                           <label class="control-label col-md-3 col-sm-3 col-xs-12">Cliente</label>
-                          <label class="desc-label col-md-6 col-sm-6 col-xs-12">
+                          <label class="desc-label col-md-6 col-sm-9 col-xs-12">
                             Cliente 1
                           </label>
                         </div>
                         <div class="form-group">
                           <label class="control-label col-md-3 col-sm-3 col-xs-12">Tienda</label>
-                          <label class="desc-label col-md-6 col-sm-6 col-xs-12">
+                          <label class="desc-label col-md-6 col-sm-9 col-xs-12">
                             Tienda 2
                           </label>
                         </div>
                         <div class="form-group">
                           <label class="control-label col-md-3 col-sm-3 col-xs-12">Dirección</label>
-                          <label class="desc-label col-md-6 col-sm-6 col-xs-12">
+                          <label class="desc-label col-md-6 col-sm-9 col-xs-12">
                             Dirección 3
                           </label>
                         </div>
@@ -253,7 +253,7 @@
                         
                         <div class="form-group">
                           <label class="control-label col-md-3 col-sm-3 col-xs-12">Emergencia</label>
-                          <label class="desc-label col-md-6 col-sm-6 col-xs-12">
+                          <label class="desc-label col-md-6 col-sm-9 col-xs-12">
                             Tipo 2
                           </label>
                         </div>
@@ -262,7 +262,7 @@
                             <br>
                             <small class="text-navy">Necesidad del cliente</small>
                           </label>
-                          <label class="desc-label col-md-6 col-sm-6 col-xs-12">
+                          <label class="desc-label col-md-6 col-sm-9 col-xs-12">
                             El cliente indica que la cámara curva está haciendo demasiado ruído.
                           </label>
                         </div>
@@ -271,7 +271,7 @@
                             <br>
                             <small class="text-navy">Solución proporcionada</small>
                           </label>
-                          <label class="desc-label col-md-6 col-sm-6 col-xs-12">
+                          <label class="desc-label col-md-6 col-sm-9 col-xs-12">
                             Se le indicó al cliente que se enviaría al técnico a verificar el funcionamiento de la cámara.
                           </label>
                         </div>
@@ -283,13 +283,13 @@
                   <div class="x_content">
                   <div class="form-group">
                           <label class="control-label col-md-3 col-sm-3 col-xs-12">Fecha de atención</label>
-                          <label class="desc-label col-md-6 col-sm-6 col-xs-12">
+                          <label class="desc-label col-md-6 col-sm-9 col-xs-12">
                             12/06/17
                           </label>
                         </div>
                     <div class="form-group">
                           <label class="control-label col-md-3 col-sm-3 col-xs-12">Estado</label>
-                          <label class="desc-label col-md-6 col-sm-6 col-xs-12">
+                          <label class="desc-label col-md-6 col-sm-9 col-xs-12">
                             Asignado
                           </label>
                         </div>
@@ -298,10 +298,29 @@
                             <br>
                             <small class="text-navy">Descripción de solución final</small>
                           </label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <textarea class="form-control" rows="3" value="Se le indicó al cliente que se enviaría al técnico a verificar el funcionamiento de la cámara."></textarea>
+                          <div class="col-md-6 col-sm-9 col-xs-12">
+                            <textarea style="width:100%;" class="form-control" rows="3" value="Se le indicó al cliente que se enviaría al técnico a verificar el funcionamiento de la cámara."></textarea>
                           </div>
                         </div>
+
+                        <div class="form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Firma <span class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-9 col-xs-12">
+                             <div id="signature-pad" class="m-signature-pad">
+    <div class="m-signature-pad--body">
+      <canvas></canvas>
+    </div>
+    <div class="m-signature-pad--footer">
+      <div class="left">
+        <a class="btn btn-success" data-action="clear"><span class="fa fa-trash"></span> Limpiar</a>
+      </div>
+    </div>
+</div>
+                            
+                          </div>
+                        </div>
+
 
 
 <!--table id="data_table" class="table table-hover">
@@ -329,7 +348,7 @@
 </tbody>
 </table-->
 <div class="row">
-              <div class="col-md-12">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                
                   <div class="x_content">
@@ -440,6 +459,8 @@
     <script src="../vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
     <!-- starrr -->
     <script src="../vendors/starrr/dist/starrr.js"></script>
+    <!-- signature_pad -->
+    <script src="../vendors/signature_pad/signature_pad.min.js"></script>
 
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.js"></script>
@@ -468,6 +489,11 @@ function add_row()
  document.getElementById("new_date").value="";
 }
 
+// Adjust canvas coordinate space taking into account pixel ratio,
+// to make it look crisp on mobile devices.
+// This also causes canvas to be cleared.
+
+
 function getSelectedText(elementId) {
     var elt = document.getElementById(elementId);
 
@@ -477,7 +503,40 @@ function getSelectedText(elementId) {
     return elt.options[elt.selectedIndex].text;
 }
 
-      $(document).ready(function() {
+var wrapper = document.getElementById("signature-pad"),
+    clearButton = wrapper.querySelector("[data-action=clear]"),
+    savePNGButton = wrapper.querySelector("[data-action=save-png]"),
+    saveSVGButton = wrapper.querySelector("[data-action=save-svg]"),
+    canvas = wrapper.querySelector("canvas"),
+    signaturePad;
+
+// Adjust canvas coordinate space taking into account pixel ratio,
+// to make it look crisp on mobile devices.
+// This also causes canvas to be cleared.
+function resizeCanvas() {
+    // When zoomed out to less than 100%, for some very strange reason,
+    // some browsers report devicePixelRatio as less than 1
+    // and only part of the canvas is cleared then.
+    var ratio =  Math.max(window.devicePixelRatio || 1, 1);
+    canvas.width = canvas.offsetWidth * ratio;
+    canvas.height = canvas.offsetHeight * ratio;
+    canvas.getContext("2d").scale(ratio, ratio);
+}
+
+window.onresize = resizeCanvas;
+resizeCanvas();
+
+signaturePad = new SignaturePad(canvas);
+
+clearButton.addEventListener("click", function (event) {
+    signaturePad.clear();
+});
+        /*saveButton.addEventListener('click', function (event) {
+          var data = signaturePad.toDataURL('image/png');
+          // Send data to server instead...
+          //window.open(data);
+          document.getElementById('firma').src=data;
+        });*/
 
         $('#new_date').daterangepicker({
           singleDatePicker: true,
@@ -485,6 +544,11 @@ function getSelectedText(elementId) {
         }, function(start, end, label) {
           console.log(start.toISOString(), end.toISOString(), label);
         });
+
+
+      $(document).ready(function() {
+
+
 
         
 
