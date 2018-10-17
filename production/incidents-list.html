@@ -24,6 +24,23 @@
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.css" rel="stylesheet">
+
+    <script type="text/javascript">
+      const userAction = async () => {
+          const response = await fetch('http://localhost:8554/incidence-type', {
+            method: 'GET',
+            headers:{
+              'Content-Type': 'application/json'
+            }
+          });
+          const myJson = await response.json(); //extract JSON from the http response
+          console.log(myJson);
+          // do something with myJson
+        }
+
+        userAction();
+
+    </script>
   </head>
 
   <body class="nav-md">
@@ -499,6 +516,8 @@
 
         TableManageButtons.init();
       });
+
+
     </script>
 
 
