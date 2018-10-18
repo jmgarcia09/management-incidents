@@ -14,17 +14,25 @@ function loginUser(){
         user : username,
         password : password
     };
+
     callLogin(requestData).then((response) =>{
 
         if(response.status !== 200){
             $("#errorMessage").text("Usuario invalido");
             return false;
         }else {
-            alert("Usuario correcto");
-            sessionStorage.setItem('user',username);
-            window.location.replace("./index.html");
+            response.json().then((data) =>{
+                console.log(data);
+                alert("Usuario correcto");
+                sessionStorage.setItem('userId',data.data.id);
+                sessionStorage.setItem('user',username);
+                window.location.replace("./index.html");
+            });
+
         }
         console.log(response);
+    }).catch((error) =>{
+        $("#errorMessage").text("No fue posible iniciar sesion.");
     });
 
 

@@ -218,53 +218,21 @@
 
             <div class="row">
               <div class="col-xs-12">
-                <form data-parsley-validate class="form-horizontal input_mask">
+                <form data-parsley-validate class="form-horizontal input_mask" onsubmit="event.preventDefault(); addIncidence()">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>Incidencia <small>Detalle</small></h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                        <div class="form-group">
-                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Cliente</label>
-                          <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="input-group">
-                              <select class="selectCustomer_single form-control" tabindex="-1" style="width:100%">
-                                <option></option>
-                                <option value="AK">Cliente 1</option>
-                                <option value="HI">Cliente 2</option>
-                                <option value="CA">Cliente 3</option>
-                                <option value="NV">Cliente 4</option>
-                                <option value="OR">Cliente 5</option>
-                                <option value="WA">Cliente 6</option>
-                                <option value="AZ">Cliente 7</option>
-                                <option value="CO">Cliente 8</option>
-                                <option value="ID">Cliente 9</option>
-                                <option value="MT">Cliente 10</option>
-                              </select>
-                              <span class="input-group-btn">
-                                <button style="line-height: 1.70!important;margin-bottom: 0px!important;
-margin-right: 0px!important;" class="btn btn-success" type="button" data-toggle="modal" data-target="#modalAddCustomer"><span class="fa fa-plus"></span></button>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
+
                         <div class="form-group">
                           <label class="control-label col-md-3 col-sm-3 col-xs-12">Tienda</label>
                           <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="input-group">
-                              <select class="select2_single form-control" tabindex="-1" style="width:100%">
+                              <select id="clientStoreId" class="select2_single form-control" tabindex="-1" style="width:100%">
                                 <option></option>
-                                <option value="AK">Tienda 1</option>
-                                <option value="HI">Tienda 2</option>
-                                <option value="CA">Tienda 3</option>
-                                <option value="NV">Tienda 4</option>
-                                <option value="OR">Tienda 5</option>
-                                <option value="WA">Tienda 6</option>
-                                <option value="AZ">Tienda 7</option>
-                                <option value="CO">Tienda 8</option>
-                                <option value="ID">Tienda 9</option>
-                                <option value="MT">Tienda 10</option>
+
                               </select>
                               <span class="input-group-btn">
                                 <button style="line-height: 1.70!important;margin-bottom: 0px!important;
@@ -281,7 +249,7 @@ margin-right: 0px!important;" class="btn btn-success" type="button" data-toggle=
                                 <div class="" style="padding: 10px 0px;">
                                   Entrante
                                   <label>
-                                    <input type="checkbox" class="js-switch" checked />
+                                    <input id="incomingOutcoming" type="checkbox" class="js-switch" checked />
                                   </label>
                                   Saliente
                                 </div>
@@ -294,18 +262,9 @@ margin-right: 0px!important;" class="btn btn-success" type="button" data-toggle=
                         <div class="form-group">
                           <label class="control-label col-md-3 col-sm-3 col-xs-12">Emergencia</label>
                           <div class="col-md-6 col-sm-6 col-xs-12">
-                            <select class="selectEmergency_single form-control" tabindex="-1" style="width:100%">
+                            <select id="incidenceType" class="selectEmergency_single form-control" tabindex="-1" style="width:100%">
                               <option></option>
-                              <option value="AK">Tipo 1</option>
-                              <option value="HI">Tipo 2</option>
-                              <option value="CA">Tipo 3</option>
-                              <option value="NV">Tipo 4</option>
-                              <option value="OR">Tipo 5</option>
-                              <option value="WA">Tipo 6</option>
-                              <option value="AZ">Tipo 7</option>
-                              <option value="CO">Tipo 8</option>
-                              <option value="ID">Tipo 9</option>
-                              <option value="MT">Tipo 10</option>
+
                             </select>
                           </div>
                         </div>
@@ -315,7 +274,7 @@ margin-right: 0px!important;" class="btn btn-success" type="button" data-toggle=
                             <small class="text-navy">Necesidad del cliente</small>
                           </label>
                           <div class="col-md-6 col-sm-6 col-xs-12">
-                            <textarea class="form-control" rows="3" value="El cliente indica que la cámara curva está haciendo demasiado ruído."></textarea>
+                            <textarea id="incidenceDescription" class="form-control" rows="3" value="El cliente indica que la cámara curva está haciendo demasiado ruído."></textarea>
                           </div>
                         </div>
                         <div class="form-group">
@@ -324,7 +283,7 @@ margin-right: 0px!important;" class="btn btn-success" type="button" data-toggle=
                             <small class="text-navy">Solución proporcionada</small>
                           </label>
                           <div class="col-md-6 col-sm-6 col-xs-12">
-                            <textarea class="form-control" rows="3" value="Se le indicó al cliente que se enviaría al técnico a verificar el funcionamiento de la cámara."></textarea>
+                            <textarea id="solutionDescription" class="form-control" rows="3" value="Se le indicó al cliente que se enviaría al técnico a verificar el funcionamiento de la cámara."></textarea>
                           </div>
                         </div>
                       </div>
@@ -360,7 +319,7 @@ margin-right: 0px!important;" class="btn btn-success" type="button" data-toggle=
 
 
                         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Nombres del emisor">
+                        <input type="text" class="form-control has-feedback-left" id="transmitterName" placeholder="Nombres del emisor">
                         <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                       </div>
 
@@ -375,7 +334,7 @@ margin-right: 0px!important;" class="btn btn-success" type="button" data-toggle=
                       </div>
 
                       <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Teléfono del emisor">
+                        <input type="text" class="form-control" id="transmitterPhone" placeholder="Teléfono del emisor">
                         <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
                       </div>
                       
@@ -659,6 +618,9 @@ margin-right: 0px!important;" class="btn btn-success" type="button" data-toggle=
 
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>
+
+    <script src="../production/js/scripts/incidence/incidenceAdd.js"></script>
+    <script src="../production/js/scripts/session.js"></script>
 
     <!-- bootstrap-daterangepicker -->
     <script>

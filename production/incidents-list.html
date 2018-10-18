@@ -25,22 +25,6 @@
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.css" rel="stylesheet">
 
-    <script type="text/javascript">
-      const userAction = async () => {
-          const response = await fetch('http://localhost:8554/incidence-type', {
-            method: 'GET',
-            headers:{
-              'Content-Type': 'application/json'
-            }
-          });
-          const myJson = await response.json(); //extract JSON from the http response
-          console.log(myJson);
-          // do something with myJson
-        }
-
-        userAction();
-
-    </script>
   </head>
 
   <body class="nav-md">
@@ -257,161 +241,15 @@
                             <th class="column-title">Tienda </th>
                             <th class="column-title">Tipo de emergencia </th>
                             <th class="column-title">Llamada </th>
-                            <th class="column-title">Estado </th>
+                            <th class="column-title">Emisor </th>
                             <th class="column-title">Fecha </th>
-                            <th class="column-title no-link last"><span class="nobr">Action</span>
+                            <th class="column-title no-link last"><span class="nobr">Acciones </span>
                             </th>
                           </tr>
                         </thead>
 
-                        <tbody>
-                          <tr class="even pointer">
-                            <td class=" ">121000043</td>
-                            <td class=" ">Amatitlan 5 </td>
-                            <td class=" ">Refrigeración</td>
-                            <td class=" ">Entrante</td>
-                            <td class=" ">Creado</td>
-                            <td class=" ">May 23, 2014 11:47:56 PM</td>
-                            <td class=" last"><a href="incidents-detail.html" class="btn btn-primary"><i class="fa fa-eye"></i></a>
-<a href="incidents-edit.html" class="btn btn-success"><i class="fa fa-edit"></i></a>
+                        <tbody id="tableContent">
 
-                            </td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class=" ">121000044</td>
-                            <td class=" ">Amatitlan 5 </td>
-                            <td class=" ">Refrigeración</i>
-                            </td>
-                            <td class=" ">Entrante</td>
-                            <td class=" ">Creado</td>
-                            <td class=" ">May 23, 2014 11:47:56 PM</td>
-                            <td class=" last"><a href="incidents-detail.html" class="btn btn-primary"><i class="fa fa-eye"></i></a>
-<a href="incidents-edit.html" class="btn btn-success"><i class="fa fa-edit"></i></a>
-
-                            </td>
-                          </tr>
-                          <tr class="even pointer">
-                            <td class=" ">121000045</td>
-                            <td class=" ">Amatitlan 5 </td>
-                            <td class=" ">Refrigeración</i>
-                            </td>
-                            <td class=" ">Entrante</td>
-                            <td class=" ">Creado</td>
-                            <td class=" ">May 23, 2014 11:47:56 PM</td>
-                            <td class=" last"><a href="incidents-detail.html" class="btn btn-primary"><i class="fa fa-eye"></i></a>
-<a href="incidents-edit.html" class="btn btn-success"><i class="fa fa-edit"></i></a>
-
-                            </td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class=" ">121000046</td>
-                            <td class=" ">Amatitlan 5 </td>
-                            <td class=" ">Refrigeración</td>
-                            <td class=" ">Entrante</td>
-                            <td class=" ">Creado</td>
-                            <td class=" ">May 23, 2014 11:47:56 PM</td>
-                            <td class=" last"><a href="incidents-detail.html" class="btn btn-primary"><i class="fa fa-eye"></i></a>
-<a href="incidents-edit.html" class="btn btn-success"><i class="fa fa-edit"></i></a>
-
-                            </td>
-                          </tr>
-                          <tr class="even pointer">
-                            <td class=" ">121000047</td>
-                            <td class=" ">Amatitlan 5 </td>
-                            <td class=" ">Refrigeración</td>
-                            <td class=" ">Entrante</td>
-                            <td class=" ">Creado</td>
-                            <td class=" ">May 23, 2014 11:47:56 PM</td>
-                            <td class=" last"><a href="incidents-detail.html" class="btn btn-primary"><i class="fa fa-eye"></i></a>
-<a href="incidents-edit.html" class="btn btn-success"><i class="fa fa-edit"></i></a>
-
-                            </td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class=" ">121000048</td>
-                            <td class=" ">Amatitlan 5 </td>
-                            <td class=" ">Refrigeración</td>
-                            <td class=" ">Entrante</td>
-                            <td class=" ">Creado</td>
-                            <td class=" ">May 23, 2014 11:47:56 PM</td>
-                            <td class=" last"><a href="incidents-detail.html" class="btn btn-primary"><i class="fa fa-eye"></i></a>
-<a href="incidents-edit.html" class="btn btn-success"><i class="fa fa-edit"></i></a>
-
-                            </td>
-                          </tr>
-                          <tr class="even pointer">
-                            <td class=" ">121000049</td>
-                            <td class=" ">Amatitlan 5 </td>
-                            <td class=" ">Refrigeración</td>
-                            <td class=" ">Entrante</td>
-                            <td class=" ">Creado</td>
-                            <td class=" ">May 23, 2014 11:47:56 PM</td>
-                            <td class=" last"><a href="incidents-detail.html" class="btn btn-primary"><i class="fa fa-eye"></i></a>
-<a href="incidents-edit.html" class="btn btn-success"><i class="fa fa-edit"></i></a>
-
-                            </td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class=" ">121000050</td>
-                            <td class=" ">Amatitlan 5 </td>
-                            <td class=" ">Refrigeración</td>
-                            <td class=" ">Entrante</td>
-                            <td class=" ">Creado</td>
-                            <td class=" ">May 23, 2014 11:47:56 PM</td>
-                            <td class=" last"><a href="incidents-detail.html" class="btn btn-primary"><i class="fa fa-eye"></i></a>
-<a href="incidents-edit.html" class="btn btn-success"><i class="fa fa-edit"></i></a>
-
-                            </td>
-                          </tr>
-
-                          <tr class="even pointer">
-                            <td class=" ">121000051</td>
-                            <td class=" ">Amatitlan 5 </td>
-                            <td class=" ">Refrigeración</td>
-                            <td class=" ">Entrante</td>
-                            <td class=" ">Creado</td>
-                            <td class=" ">May 23, 2014 11:47:56 PM</td>
-                            <td class=" last"><a href="incidents-detail.html" class="btn btn-primary"><i class="fa fa-eye"></i></a>
-<a href="incidents-edit.html" class="btn btn-success"><i class="fa fa-edit"></i></a>
-
-                            </td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class=" ">121000052</td>
-                            <td class=" ">Amatitlan 5 </td>
-                            <td class=" ">Refrigeración</td>
-                            <td class=" ">Entrante</td>
-                            <td class=" ">Creado</td>
-                            <td class=" ">May 23, 2014 11:47:56 PM</td>
-                            <td class=" last"><a href="incidents-detail.html" class="btn btn-primary"><i class="fa fa-eye"></i></a>
-<a href="incidents-edit.html" class="btn btn-success"><i class="fa fa-edit"></i></a>
-
-                            </td>
-                          </tr>
-                          <tr class="even pointer">
-                            <td class=" ">121000053</td>
-                            <td class=" ">Amatitlan 5 </td>
-                            <td class=" ">Refrigeración</td>
-                            <td class=" ">Entrante</td>
-                            <td class=" ">Creado</td>
-                            <td class=" ">May 23, 2014 11:47:56 PM</td>
-                            <td class=" last"><a href="incidents-detail.html" class="btn btn-primary"><i class="fa fa-eye"></i></a>
-<a href="incidents-edit.html" class="btn btn-success"><i class="fa fa-edit"></i></a>
-
-                            </td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class=" ">121000054</td>
-                            <td class=" ">Amatitlan 5 </td>
-                            <td class=" ">Refrigeración</td>
-                            <td class=" ">Entrante</td>
-                            <td class=" ">Creado</td>
-                            <td class=" ">May 23, 2014 11:47:56 PM</td>
-                            <td class=" last"><a href="incidents-detail.html" class="btn btn-primary"><i class="fa fa-eye"></i></a>
-<a href="incidents-edit.html" class="btn btn-success"><i class="fa fa-edit"></i></a>
-
-                            </td>
-                          </tr>
                         </tbody>
                     </table>
                     </div>
@@ -463,62 +301,58 @@
     <script src="../build/js/custom.js"></script>
 
     <!-- Datatables -->
-    <script>
-      $(document).ready(function() {
-        var handleDataTableButtons = function() {
-          if ($("#datatable-buttons").length) {
-            $("#datatable-buttons").DataTable({
-              dom: "Bfrtip",
-              buttons: [
-                {
-                  extend: "copy",
-                  className: "btn-sm"
-                },
-                {
-                  extend: "csv",
-                  className: "btn-sm"
-                },
-                {
-                  extend: "excel",
-                  className: "btn-sm"
-                },
-                {
-                  extend: "pdfHtml5",
-                  className: "btn-sm"
-                },
-                {
-                  extend: "print",
-                  className: "btn-sm"
-                },
-              ],
-              responsive: true
-            });
-          }
-        };
+    <!--<script>-->
+      <!--$(document).ready(function() {-->
+        <!--var handleDataTableButtons = function() {-->
+          <!--if ($("#datatable-buttons").length) {-->
+            <!--$("#datatable-buttons").DataTable({-->
+              <!--dom: "Bfrtip",-->
+              <!--buttons: [-->
+                <!--{-->
+                  <!--extend: "copy",-->
+                  <!--className: "btn-sm"-->
+                <!--},-->
+                <!--{-->
+                  <!--extend: "csv",-->
+                  <!--className: "btn-sm"-->
+                <!--},-->
+                <!--{-->
+                  <!--extend: "excel",-->
+                  <!--className: "btn-sm"-->
+                <!--},-->
+                <!--{-->
+                  <!--extend: "pdfHtml5",-->
+                  <!--className: "btn-sm"-->
+                <!--},-->
+                <!--{-->
+                  <!--extend: "print",-->
+                  <!--className: "btn-sm"-->
+                <!--},-->
+              <!--],-->
+              <!--responsive: true-->
+            <!--});-->
+          <!--}-->
+        <!--};-->
 
-        TableManageButtons = function() {
-          "use strict";
-          return {
-            init: function() {
-              handleDataTableButtons();
-            }
-          };
-        }();
-
-        var $datatable = $('#datatable-checkbox');
-
-        $datatable.dataTable({
-          'order': [[ 1, 'asc' ]],
-          'columnDefs': [
-            { orderable: false, targets: [0] }
-          ]
-        });
-
-        TableManageButtons.init();
-      });
+        <!--TableManageButtons = function() {-->
+          <!--"use strict";-->
+          <!--return {-->
+            <!--init: function() {-->
+              <!--handleDataTableButtons();-->
+            <!--}-->
+          <!--};-->
+        <!--}();-->
 
 
-    </script>
+
+        <!--TableManageButtons.init();-->
+      <!--});-->
+
+
+    <!--</script>-->
+
+    <script src="../production/js/scripts/incidence/incidence.js"></script>
+    <script src="../production/js/scripts/session.js"></script>
 
 
   </body>
