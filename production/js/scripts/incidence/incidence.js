@@ -1,4 +1,4 @@
-const serviceUrl = 'http://localhost:8554';
+const serviceUrl = 'http://52.39.233.235:8554';
 
 
 $(document).ready(function() {
